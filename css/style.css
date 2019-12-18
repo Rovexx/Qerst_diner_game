@@ -1,0 +1,124 @@
+:root {
+  --green: #84bc2d;
+  --darker-green: #73a71f;
+  --lighter-green: #a4df46;
+  --slightly-white: #ffffff;
+  --text-black: rgba(0, 0, 0, 0.90);
+}
+body {
+    display:            flex;
+    min-height:         100vh;
+    flex-direction:     column;
+    font-family:        'Roboto', sans-serif;
+    font-weight:        300;
+    color:              var(--text-black);
+}
+main {
+    flex:               1 0 auto;
+    background-color:   var(--slightly-white);
+}
+
+/* Text */
+p{
+    line-height:        28px;
+}
+
+/* bold text */
+.bold {
+    font-weight:        600;
+}
+
+/* Thick text */
+.thick {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-weight:        900;
+}
+
+/* Button colors */
+.btn-large:hover {
+    background-color:   var(--green);
+}
+.btn-large:active {
+    background-color:   var(--darker-green);
+}
+
+/* spacers */
+.smallSpacer {
+    height:             5px;
+    margin:             0px;
+}
+.largeSpacer {
+    height:             25px;
+    margin:             0px;
+}
+
+/* color palette */
+.green {
+    color:              var(--green);
+}
+.lightGreen {
+    color:              var(--lighter-green);
+}
+.darkGreen {
+    color:              var(--darker-green);
+}
+
+.backgroundGreen {
+    background-color:   var(--green);
+}
+.backgroundLightGreen {
+    background-color:   var(--lighter-green);
+}
+.backgroundDarkGreen {
+    background-color:   var(--darker-green);
+}
+
+/* Table */
+.dataTable {
+    display:            grid;
+    max-height:         100vh;
+    overflow-y:         auto;
+    border-top:         1px solid;
+    border-bottom:      1px solid;
+}
+.dataTable td {
+    padding:            0px;
+}
+.dataTable p {
+    margin-top:         5px;
+    margin-bottom:      5px;
+    padding-left:       10px;
+    overflow-wrap:      break-word;
+}
+
+/* Message box */
+#messageBox h5 {
+    overflow-wrap:      break-word;
+}
+
+.offset {
+    margin-top:         150px;
+}
+
+/* Animated skill progress bar */
+.progress{
+    height: 20px;
+    line-height: 15px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.progress-bar{
+    position: relative;
+    border-radius: 0;
+    height: inherit;
+}
+
+@-webkit-keyframes animate-positive{
+    0% { width: 0%; }
+}
+@keyframes animate-positive{
+    0% { width: 0%; }
+}
