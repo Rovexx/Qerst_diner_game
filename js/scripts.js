@@ -5,7 +5,9 @@ var team_3_score = 0;
 var lastMessageId;
 var multiplier = 1;
 var maxCalories = 2000;
-var url = 'ws://10.71.16.57:599';
+var ip = "192.168.1.205";
+var port = "80";
+var url = 'ws://'+ ip + ':' + port;
 var connection;
 resetGame();
 
@@ -29,7 +31,7 @@ function websocketSetup() {
 // Called when a WebSocket connection is established with the server
 function onOpen(evt) {
     console.log("Connected");
-    connection.send(`start_1`);
+    connection.send(`start`);
 }
 // Called when a WebSocket error occurs
 function onError(evt) {
@@ -74,15 +76,17 @@ function setMessageBoard(data) {
     data.forEach(message => {
         let messageDate = new Date(message.timestamp);
         messageDate = messageDate.getHours() + ":" + messageDate.getMinutes() + ":" + messageDate.getSeconds();
+        let teamName = message.team == 0 ? "Qerstman" : message.team == 1 ? "Rudolph" : message.team == 2 ? "Elf" : "None";
         let html = `
             <tr>
                 <td class="col s12">
                     <div class="row">
-                        <div class="col s4 center">
+                        <div class="col s2 center">
                             <p class="bold">${message.name}</p>
+                            <p>Team: ${teamName}</p>
                             <p>${messageDate}</p>
                         </div>
-                        <div class="col s8">
+                        <div class="col s10">
                             <p>${message.message}</p>
                         </div>
                     </div>
@@ -98,10 +102,12 @@ function setMessageBoard(data) {
  */
 function popUp(data, lastMessageDate) {
     let lastMessageTime = lastMessageDate.getHours() + ":" + lastMessageDate.getMinutes() + ":" + lastMessageDate.getSeconds();
+    let teamName = data['team'] == 0 ? "Qerstman" : data['team'] == 1 ? "Rudolph" : data['team'] == 2 ? "Elf" : "None";
     document.getElementById("messageBox").innerHTML = `
         <div class="row z-depth-5">
             <div class="col s4 center backgroundGreen">
-                <h5 class=" white-text bold">${data['name']}</h5>
+                <h5 class="white-text bold">${data['name']}</h5>
+                <p class="white-text">Team: ${teamName}</p>
                 <p class="white-text">${lastMessageTime}</p>
             </div>
             <div class="col s8 backgroundLightGreen">

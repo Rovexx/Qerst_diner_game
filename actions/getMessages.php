@@ -2,7 +2,7 @@
   include_once '../includes/dbh.php';    // import database connection
   // Get todays statistics
   $query = "SELECT *
-      FROM `messages` ORDER BY timestamp DESC LIMIT 10";
+      FROM `messages` ORDER BY timestamp DESC LIMIT 6";
   $result = mysqli_query($conn, $query);
   mysqli_close($conn);
   $data = [];

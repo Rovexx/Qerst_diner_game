@@ -76,7 +76,7 @@ p{
 /* Table */
 .dataTable {
     display:            grid;
-    max-height:         100vh;
+    max-height:         90vh;
     overflow-y:         auto;
     border-top:         1px solid;
     border-bottom:      1px solid;

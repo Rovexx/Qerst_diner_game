@@ -38,7 +38,7 @@ include_once 'includes/head.html';  // import head
             <select name="team" id="team" type="text" class="validate" required>
               <option value="0">Team Qerstman</option>
               <option value="1">Team Rudolph</option>
-              <option value="1">Team Elf</option>
+              <option value="2">Team Elf</option>
             </select>
             <label>Team</label>
           </div>

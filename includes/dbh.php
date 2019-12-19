@@ -1,11 +1,11 @@
 <?php
-/*
+
 // production
-$servername = "localhost";
-$username = "root";
-$pass = "pass";
-$databaseName = "qerst";
-*/
+// $servername = "localhost";
+// $username = "qerstuserQ42";
+// $pass = "TheBestPasswordForQ42Ever";
+// $databaseName = "qerst";
+
 
 // localhost
 $servername = "localhost";
