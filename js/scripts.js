@@ -5,9 +5,7 @@ var team_3_score = 0;
 var lastMessageId;
 var multiplier = 1;
 var maxCalories = 2000;
-var ip = "192.168.1.205";
-var port = "80";
-var url = 'ws://'+ ip + ':' + port;
+var url = 'ws://192.168.1.205:599';
 var connection;
 resetGame();
 
@@ -31,7 +29,7 @@ function websocketSetup() {
 // Called when a WebSocket connection is established with the server
 function onOpen(evt) {
     console.log("Connected");
-    connection.send(`start`);
+    connection.send(0);
 }
 // Called when a WebSocket error occurs
 function onError(evt) {
@@ -217,7 +215,7 @@ function winScenario(winningTeam) {
     team_2_score = 0;
     team_3_score = 0;
     console.log(`Team ${winningTeam} won!`);
-    connection.send(`start_${winningTeam}`);
+    connection.send(winningTeam);
     updateGamestate(team_1_score, team_2_score, team_3_score, winningTeam);
 }
 
